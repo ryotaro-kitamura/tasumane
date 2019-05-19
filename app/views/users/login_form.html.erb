@@ -1,0 +1,23 @@
+<div class="wrapper fadeInDown">
+  <% if @error_message %>
+    <div class="form-error">
+     <%= @error_message %>
+    </div>
+  <% end %>
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <%= form_tag("/login") do %>
+
+    <!-- Login Form -->
+    <form>
+      <h2>login</h2>
+      <input type="text" id="login" class="fadeIn second" name="email" placeholder="email">
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <% end %>
+
+  </div>
+</div>

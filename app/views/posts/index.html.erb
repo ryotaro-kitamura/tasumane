@@ -1,0 +1,20 @@
+<div class="main posts-index">
+  <div class="container">
+    <% @records.each do |record| %>
+      <div class="posts-index-item">
+        <div class="user-left">
+          <img src="<%= "/user_images/#{record.user.image_name}" %>">
+
+        </div>
+        <div class="post-task">
+          <%= link_to(record.task,"/posts/#{record.id}") %>
+        </div>
+        <div class="post-studytime">
+          <%= record.hour %>h<%= record.minute %>m
+        </div>
+        <%= @likes_count %>
+
+      </div>
+    <% end %>
+  </div>
+</div>

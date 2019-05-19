@@ -1,0 +1,28 @@
+<div class="wrapper fadeInDown">
+
+  <% @user.errors.full_messages.each do |message| %>
+    <div class="form-error">
+     <%= message %>
+    </div>
+  <% end %>
+
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <%= form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
+
+    <!-- Login Form -->
+    <form>
+      <h2>Edit Account</h2>
+      <input type="text" id="name" class="fadeIn first" name="name" value="<%= @user.name %>">
+      <input type="text" id="login" class="fadeIn second" name="email" value="<%= @user.email %>">
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+      <input name="image" type="file" class="fadeIn fourth" placeholder="画像">
+      <input type="submit" class="fadeIn fifth" value="finish edit">
+    </form>
+
+    <% end %>
+
+  </div>
+
+</div>
