@@ -19,12 +19,12 @@
       <!-- 変数postを定義してください -->
       <% record = Record.find_by(id: like.record_id) %>
 
-      <div class="posts-index-item">
-        <div class="post-left">
+      <div class="records-index-item">
+        <div class="record-left">
           <img src="<%= "/user_images/#{record.user.image_name}" %>">
         </div>
-        <div class="post-right">
-          <div class="post-user-name">
+        <div class="record-right">
+          <div class="record-user-name">
             <%= link_to(record.user.name, "/users/#{record.user.id}") %>
           </div>
           <%= link_to(record.task, "/posts/#{record.id}") %>

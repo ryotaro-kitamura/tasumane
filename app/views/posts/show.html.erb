@@ -1,9 +1,10 @@
-<div class="posts-index-item">
-  <div class="post-task">
+<div class="records-index-item">
+  <div class="record-task">
     <p><%= @record.task %></p>
   </div>
-  <div class="post-time">
+  <div class="record-time">
     <p><%= @record.hour %>h<%= @record.minute %>m</p>
+
     <% if Like.find_by(user_id:@current_user.id, record_id:@record.id) %>
       <%= link_to("/likes/#{@record.id}/destroy",{method:"post"}) do %>
         <span class="fa fa-heart like-btn-unlike"></span>
@@ -17,11 +18,13 @@
 
       <% end %>
     <% end %>
+
   </div>
+
   <% if @record.user.id == @current_user.id %>
     <%= link_to("編集", "/posts/#{@record.id}/edit") %>
     <%= link_to("削除", "/posts/#{@record.id}/destroy",{method: "post"}) %>
   <% end %>
-  
+
 
 </div>
